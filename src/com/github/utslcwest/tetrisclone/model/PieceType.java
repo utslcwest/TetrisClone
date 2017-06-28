@@ -32,14 +32,38 @@ public enum PieceType {
 	}
 	
 	private Piece createPiece(PieceType type) {
+		List<Block> blocks = Lists.newArrayList();
+		Block pivoter;
 		switch (type) {
 		case LINE:
-			List<Block> blocks = Lists.newArrayList();
 			blocks.add(new Block(LINE.color, new Position(LINE.x1, LINE.y1)));
 			blocks.add(new Block(LINE.color, new Position(LINE.x2, LINE.y2)));
 			blocks.add(new Block(LINE.color, new Position(LINE.x3, LINE.y3)));
 			blocks.add(new Block(LINE.color, new Position(LINE.x4, LINE.y4)));
-			Block pivoter = blocks.get(0);
+			pivoter = blocks.get(0);
+			break;
+		case FORWARD_L:
+			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x1, FORWARD_L.y1)));
+			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x2, FORWARD_L.y2)));
+			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x3, FORWARD_L.y3)));
+			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x4, FORWARD_L.y4)));
+			pivoter = blocks.get(0);
+			break;
+		case BACKWARD_L:
+			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x1, BACKWARD_L.y1)));
+			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x2, BACKWARD_L.y2)));
+			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x3, BACKWARD_L.y3)));
+			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x4, BACKWARD_L.y4)));
+			pivoter = blocks.get(0);
+			break;
+		case FORWARD_Z:
+			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x1, FORWARD_Z.y1)));
+			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x2, FORWARD_Z.y2)));
+			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x3, FORWARD_Z.y3)));
+			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x4, FORWARD_Z.y4)));
+			pivoter = blocks.get(0);
+			break;
+		default:
 			break;
 		}
 		return null;
