@@ -1,8 +1,9 @@
 package com.github.utslcwest.tetrisclone.model;
 
 import java.awt.Color;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import com.google.common.collect.Lists;
 
@@ -18,6 +19,9 @@ public enum PieceType {
 	
 	private final Color color;
 	private final int x1, x2, x3, x4, y1, y2, y3, y4;
+	private static final int SIZE = 7;
+	private static final List<PieceType> VALUES = Arrays.asList(values());
+	private Random random = new Random();
 	
 	PieceType(Color color, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
 		this.color = color;
@@ -86,6 +90,10 @@ public enum PieceType {
 			break;
 		}
 		return new Piece(blocks, pivoter);
+	}
+	
+	public Piece createRandomPiece() {
+		return createPiece(VALUES.get(random.nextInt(SIZE)));
 	}
 
 }
