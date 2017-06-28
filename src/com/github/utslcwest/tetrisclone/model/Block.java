@@ -4,14 +4,28 @@ import java.awt.Color;
 
 public class Block {
 	
-	Color color;
+	private Color color;
 	
-	void setColor (Color color){
+	private Position position;
+	
+	public Block(Color color, Position position){
 		this.color = color;
+		this.position = position;
+		
 	}
 	
-	void setPosition (Position position){
+	public void setPosition (Position position){
+		this.position = position;
 		
+	}
+	
+	public Position getPosition(){
+		return position;
+		
+	}
+	
+	public Color getColor(){
+		return color;
 	}
 
 }
