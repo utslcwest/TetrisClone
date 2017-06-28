@@ -33,7 +33,7 @@ public enum PieceType {
 	
 	private Piece createPiece(PieceType type) {
 		List<Block> blocks = Lists.newArrayList();
-		Block pivoter;
+		Block pivoter = new Block(Color.BLACK, new Position(0, 0));
 		switch (type) {
 		case LINE:
 			blocks.add(new Block(LINE.color, new Position(LINE.x1, LINE.y1)));
@@ -63,10 +63,29 @@ public enum PieceType {
 			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x4, FORWARD_Z.y4)));
 			pivoter = blocks.get(0);
 			break;
-		default:
+		case BACKWARD_Z:
+			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x1, BACKWARD_Z.y1)));
+			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x2, BACKWARD_Z.y2)));
+			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x3, BACKWARD_Z.y3)));
+			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x4, BACKWARD_Z.y4)));
+			pivoter = blocks.get(3);
+			break;
+		case SQUARE:
+			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x1, SQUARE.y1)));
+			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x2, SQUARE.y2)));
+			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x3, SQUARE.y3)));
+			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x4, SQUARE.y4)));
+			pivoter = blocks.get(0);
+			break;
+		case HALF_PLUS:
+			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x1, HALF_PLUS.y1)));
+			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x2, HALF_PLUS.y2)));
+			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x3, HALF_PLUS.y3)));
+			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x4, HALF_PLUS.y4)));
+			pivoter = blocks.get(0);
 			break;
 		}
-		return null;
+		return new Piece(blocks, pivoter);
 	}
 
 }
