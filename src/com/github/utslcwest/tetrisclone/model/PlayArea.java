@@ -33,7 +33,16 @@ public class PlayArea {
 	}
 
 	private boolean isPieceAtBottom() {
-		// TODO Auto-generated method stub
+		List<Point> activePoints = activePiece.getPiecePosition();
+		for (Point point : activePoints){
+			
+			if (point.y == MIN_Y){
+				return true;
+				
+			}
+			
+		}
+		
 		return false;
 	}
 	
