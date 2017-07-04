@@ -39,13 +39,9 @@ public class Piece {
 	private List<Block> blocks;
 	private Block axle;
 	
-	private Piece(List<Block> blocks, Block axle) {
-		this.blocks = blocks;
-		this.axle = axle;
-	}
-	
 	public Piece(Type type) {
 		this.blocks = Piece.createBlocks(type);
+		this.axle = blocks.get(1);
 	}
 	
 	private static List<Block> createBlocks(Type type) {
