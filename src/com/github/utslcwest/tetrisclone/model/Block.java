@@ -12,5 +12,9 @@ public class Block {
 		this.color = color;
 		this.point = point;
 	}
+	
+	public boolean isEmpty() {
+		return this.color == Color.BLACK;
+	}
 
 }
