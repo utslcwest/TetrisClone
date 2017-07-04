@@ -29,8 +29,8 @@ public class Piece {
 	}
 	
 	private static final int[][] I_COORDS = {{0, 0}, {0, 1}, {0, 2}, {0, 3}};
-	private static final int[][] L_COORDS = {{0, 0}, {1, 0}, {0, 1}, {0, 2}};
-	private static final int[][] J_COORDS = {{0, 0}, {1, 0}, {1, 1}, {1, 2}};
+	private static final int[][] L_COORDS = {{0, 0}, {0, 1}, {0, 2}, {1, 0}};
+	private static final int[][] J_COORDS = {{1, 0}, {1, 1}, {1, 2}, {0, 0}};
 	private static final int[][] Z_COORDS = {{0, 0}, {0, 1}, {1, 1}, {1, 2}};
 	private static final int[][] S_COORDS = {{1, 0}, {1, 1}, {0, 1}, {0, 2}};
 	private static final int[][] O_COORDS = {{0, 0}, {0, 1}, {1, 1}, {1, 0}};
