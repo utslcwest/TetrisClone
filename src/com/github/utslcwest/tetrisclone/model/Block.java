@@ -1,31 +1,16 @@
 package com.github.utslcwest.tetrisclone.model;
 
 import java.awt.Color;
+import java.awt.Point;
 
 public class Block {
 
-	private Color color;
+	public Color color;
+	public Point point;
 
-	private Position position;
-
-	public Block(Color color, Position position) {
+	public Block(Color color, Point point) {
 		this.color = color;
-		this.position = position;
-
-	}
-
-	public void setPosition(Position position) {
-		this.position = position;
-
-	}
-
-	public Position getPosition() {
-		return position;
-
-	}
-
-	public Color getColor() {
-		return color;
+		this.point = point;
 	}
 
 }

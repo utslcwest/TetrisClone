@@ -8,6 +8,5 @@ public class PlayArea {
 	private static final int MIN_X = 0, MIN_Y = 0;
 	private Piece activePiece;
 	private List<Block> blocks;
-	
 
 }

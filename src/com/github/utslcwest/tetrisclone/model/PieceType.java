@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.awt.Point;
 
 import com.google.common.collect.Lists;
 
@@ -37,55 +38,55 @@ public enum PieceType {
 	
 	private Piece createPiece(PieceType type) {
 		List<Block> blocks = Lists.newArrayList();
-		Block pivoter = new Block(Color.BLACK, new Position(0, 0));
+		Block pivoter = new Block(Color.BLACK, new Point(0, 0));
 		switch (type) {
 		case LINE:
-			blocks.add(new Block(LINE.color, new Position(LINE.x1, LINE.y1)));
-			blocks.add(new Block(LINE.color, new Position(LINE.x2, LINE.y2)));
-			blocks.add(new Block(LINE.color, new Position(LINE.x3, LINE.y3)));
-			blocks.add(new Block(LINE.color, new Position(LINE.x4, LINE.y4)));
+			blocks.add(new Block(LINE.color, new Point(LINE.x1, LINE.y1)));
+			blocks.add(new Block(LINE.color, new Point(LINE.x2, LINE.y2)));
+			blocks.add(new Block(LINE.color, new Point(LINE.x3, LINE.y3)));
+			blocks.add(new Block(LINE.color, new Point(LINE.x4, LINE.y4)));
 			pivoter = blocks.get(0);
 			break;
 		case FORWARD_L:
-			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x1, FORWARD_L.y1)));
-			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x2, FORWARD_L.y2)));
-			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x3, FORWARD_L.y3)));
-			blocks.add(new Block(FORWARD_L.color, new Position(FORWARD_L.x4, FORWARD_L.y4)));
+			blocks.add(new Block(FORWARD_L.color, new Point(FORWARD_L.x1, FORWARD_L.y1)));
+			blocks.add(new Block(FORWARD_L.color, new Point(FORWARD_L.x2, FORWARD_L.y2)));
+			blocks.add(new Block(FORWARD_L.color, new Point(FORWARD_L.x3, FORWARD_L.y3)));
+			blocks.add(new Block(FORWARD_L.color, new Point(FORWARD_L.x4, FORWARD_L.y4)));
 			pivoter = blocks.get(0);
 			break;
 		case BACKWARD_L:
-			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x1, BACKWARD_L.y1)));
-			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x2, BACKWARD_L.y2)));
-			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x3, BACKWARD_L.y3)));
-			blocks.add(new Block(BACKWARD_L.color, new Position(BACKWARD_L.x4, BACKWARD_L.y4)));
+			blocks.add(new Block(BACKWARD_L.color, new Point(BACKWARD_L.x1, BACKWARD_L.y1)));
+			blocks.add(new Block(BACKWARD_L.color, new Point(BACKWARD_L.x2, BACKWARD_L.y2)));
+			blocks.add(new Block(BACKWARD_L.color, new Point(BACKWARD_L.x3, BACKWARD_L.y3)));
+			blocks.add(new Block(BACKWARD_L.color, new Point(BACKWARD_L.x4, BACKWARD_L.y4)));
 			pivoter = blocks.get(0);
 			break;
 		case FORWARD_Z:
-			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x1, FORWARD_Z.y1)));
-			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x2, FORWARD_Z.y2)));
-			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x3, FORWARD_Z.y3)));
-			blocks.add(new Block(FORWARD_Z.color, new Position(FORWARD_Z.x4, FORWARD_Z.y4)));
+			blocks.add(new Block(FORWARD_Z.color, new Point(FORWARD_Z.x1, FORWARD_Z.y1)));
+			blocks.add(new Block(FORWARD_Z.color, new Point(FORWARD_Z.x2, FORWARD_Z.y2)));
+			blocks.add(new Block(FORWARD_Z.color, new Point(FORWARD_Z.x3, FORWARD_Z.y3)));
+			blocks.add(new Block(FORWARD_Z.color, new Point(FORWARD_Z.x4, FORWARD_Z.y4)));
 			pivoter = blocks.get(0);
 			break;
 		case BACKWARD_Z:
-			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x1, BACKWARD_Z.y1)));
-			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x2, BACKWARD_Z.y2)));
-			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x3, BACKWARD_Z.y3)));
-			blocks.add(new Block(BACKWARD_Z.color, new Position(BACKWARD_Z.x4, BACKWARD_Z.y4)));
+			blocks.add(new Block(BACKWARD_Z.color, new Point(BACKWARD_Z.x1, BACKWARD_Z.y1)));
+			blocks.add(new Block(BACKWARD_Z.color, new Point(BACKWARD_Z.x2, BACKWARD_Z.y2)));
+			blocks.add(new Block(BACKWARD_Z.color, new Point(BACKWARD_Z.x3, BACKWARD_Z.y3)));
+			blocks.add(new Block(BACKWARD_Z.color, new Point(BACKWARD_Z.x4, BACKWARD_Z.y4)));
 			pivoter = blocks.get(3);
 			break;
 		case SQUARE:
-			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x1, SQUARE.y1)));
-			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x2, SQUARE.y2)));
-			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x3, SQUARE.y3)));
-			blocks.add(new Block(SQUARE.color, new Position(SQUARE.x4, SQUARE.y4)));
+			blocks.add(new Block(SQUARE.color, new Point(SQUARE.x1, SQUARE.y1)));
+			blocks.add(new Block(SQUARE.color, new Point(SQUARE.x2, SQUARE.y2)));
+			blocks.add(new Block(SQUARE.color, new Point(SQUARE.x3, SQUARE.y3)));
+			blocks.add(new Block(SQUARE.color, new Point(SQUARE.x4, SQUARE.y4)));
 			pivoter = blocks.get(0);
 			break;
 		case HALF_PLUS:
-			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x1, HALF_PLUS.y1)));
-			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x2, HALF_PLUS.y2)));
-			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x3, HALF_PLUS.y3)));
-			blocks.add(new Block(HALF_PLUS.color, new Position(HALF_PLUS.x4, HALF_PLUS.y4)));
+			blocks.add(new Block(HALF_PLUS.color, new Point(HALF_PLUS.x1, HALF_PLUS.y1)));
+			blocks.add(new Block(HALF_PLUS.color, new Point(HALF_PLUS.x2, HALF_PLUS.y2)));
+			blocks.add(new Block(HALF_PLUS.color, new Point(HALF_PLUS.x3, HALF_PLUS.y3)));
+			blocks.add(new Block(HALF_PLUS.color, new Point(HALF_PLUS.x4, HALF_PLUS.y4)));
 			pivoter = blocks.get(0);
 			break;
 		}
