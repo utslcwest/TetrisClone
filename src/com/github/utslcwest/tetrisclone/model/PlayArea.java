@@ -15,15 +15,25 @@ public class PlayArea {
 
 	public PlayArea() {
 		blocks = newArrayList();
-
 		for (int i = MIN_X; i <= MAX_X; i++) {
 			for (int j = MIN_Y; j <= MAX_Y; j++) {
 				blocks.add(new Block(Color.BLACK, new Point(i, j)));
-
 			}
-
 		}
-
+	}
+	
+	public boolean isCollision() {
+		return isPieceStoppedByBlock() || isPieceAtBottom();
 	}
 
+	private boolean isPieceStoppedByBlock() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean isPieceAtBottom() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }

@@ -3,6 +3,7 @@ package com.github.utslcwest.tetrisclone.model;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.List;
+import java.util.Random;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -51,6 +52,10 @@ public class Piece {
 			blocks.add(block);
 		}
 		return blocks;
+	}
+	
+	public static Piece getRandomPiece() {
+		return new Piece(Type.values()[new Random().nextInt(Type.values().length)]);
 	}
 
 }
