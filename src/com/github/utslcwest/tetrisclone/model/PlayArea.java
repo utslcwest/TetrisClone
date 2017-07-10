@@ -85,4 +85,37 @@ public class PlayArea {
 		return false;
 	}
 	
+	
+
+public void rightArrowPressed() {
+	if (canMoveRight()) {
+		activePiece.moveRight();
+	}
 }
+
+private boolean canMoveRight() {
+	return !(isBlockedOnRight() || isAtRightEdge());
+}
+
+private boolean isBlockedOnRight() {
+	List<Point> activePoints = activePiece.getPiecePosition();
+	for (Point point : activePoints) {
+		if (blocks.get(new Point(point.x + 1, point.y)).isEmpty()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+private boolean isAtRightEdge() {
+	List<Point> activePoints = activePiece.getPiecePosition();
+	for (Point point : activePoints) {
+		if (point.x == MAX_X) {
+			return true;
+		}
+	}
+	return false;
+}
+
+}
+

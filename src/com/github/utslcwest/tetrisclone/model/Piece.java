@@ -76,4 +76,12 @@ public class Piece {
 		}
 	}
 
+	
+	public void moveRight() {
+		for (Block block : blocks) {
+			block.point.translate(+1, 0);
+		}
+		
+	}
+
 }
