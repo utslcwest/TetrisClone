@@ -23,12 +23,21 @@ public class PlayArea {
 		}
 	}
 	
-	public boolean isCollision() {
-		return isPieceStoppedByBlock() || isPieceAtBottom();
+	public boolean isCollisionDown() {
+		return areBlocksUnderPiece() || isPieceAtBottom();
 	}
 
-	private boolean isPieceStoppedByBlock() {
-		// TODO Auto-generated method stub
+	private boolean areBlocksUnderPiece() {
+		List<Point> activePoints = activePiece.getPiecePosition();
+		for (Point point : activePoints){
+			
+			if (!blocks.get( new Point (point.x, point.y-1)).isEmpty()){
+				
+				return true;
+			}
+			
+		}
+		
 		return false;
 	}
 
