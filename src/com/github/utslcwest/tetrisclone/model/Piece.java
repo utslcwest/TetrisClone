@@ -70,4 +70,10 @@ public class Piece {
 
 	}
 
+	public void moveLeft() {
+		for (Block block : blocks) {
+			block.point.translate(-1, 0);
+		}
+	}
+
 }
