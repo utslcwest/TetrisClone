@@ -60,14 +60,10 @@ public class Piece {
 
 	public List<Point> getPiecePosition() {
 		List<Point> points = newArrayList();
-
 		for (int i = 0; i <= 3; i++) {
 			points.add(blocks.get(i).point);
-
 		}
-
 		return points;
-
 	}
 
 	public void moveLeft() {
@@ -76,12 +72,10 @@ public class Piece {
 		}
 	}
 
-	
 	public void moveRight() {
 		for (Block block : blocks) {
 			block.point.translate(+1, 0);
 		}
-		
 	}
 
 }

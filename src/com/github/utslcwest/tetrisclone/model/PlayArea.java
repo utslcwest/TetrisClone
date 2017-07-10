@@ -22,45 +22,37 @@ public class PlayArea {
 			}
 		}
 	}
-	
+
 	public boolean isCollisionDown() {
 		return areBlocksUnderPiece() || isPieceAtBottom();
 	}
 
 	private boolean areBlocksUnderPiece() {
 		List<Point> activePoints = activePiece.getPiecePosition();
-		for (Point point : activePoints){
-			
-			if (!blocks.get( new Point (point.x, point.y-1)).isEmpty()){
-				
+		for (Point point : activePoints) {
+			if (!blocks.get(new Point(point.x, point.y - 1)).isEmpty()) {
 				return true;
 			}
-			
 		}
-		
 		return false;
 	}
 
 	private boolean isPieceAtBottom() {
 		List<Point> activePoints = activePiece.getPiecePosition();
-		for (Point point : activePoints){
-			
-			if (point.y == MIN_Y){
+		for (Point point : activePoints) {
+			if (point.y == MIN_Y) {
 				return true;
-				
 			}
-			
 		}
-		
 		return false;
 	}
-	
+
 	public void leftArrowPressed() {
 		if (canMoveLeft()) {
 			activePiece.moveLeft();
 		}
 	}
-	
+
 	private boolean canMoveLeft() {
 		return !(isBlockedOnLeft() || isAtLeftEdge());
 	}
@@ -74,7 +66,7 @@ public class PlayArea {
 		}
 		return false;
 	}
-	
+
 	private boolean isAtLeftEdge() {
 		List<Point> activePoints = activePiece.getPiecePosition();
 		for (Point point : activePoints) {
@@ -84,38 +76,35 @@ public class PlayArea {
 		}
 		return false;
 	}
-	
-	
 
-public void rightArrowPressed() {
-	if (canMoveRight()) {
-		activePiece.moveRight();
-	}
-}
-
-private boolean canMoveRight() {
-	return !(isBlockedOnRight() || isAtRightEdge());
-}
-
-private boolean isBlockedOnRight() {
-	List<Point> activePoints = activePiece.getPiecePosition();
-	for (Point point : activePoints) {
-		if (blocks.get(new Point(point.x + 1, point.y)).isEmpty()) {
-			return true;
+	public void rightArrowPressed() {
+		if (canMoveRight()) {
+			activePiece.moveRight();
 		}
 	}
-	return false;
-}
 
-private boolean isAtRightEdge() {
-	List<Point> activePoints = activePiece.getPiecePosition();
-	for (Point point : activePoints) {
-		if (point.x == MAX_X) {
-			return true;
-		}
+	private boolean canMoveRight() {
+		return !(isBlockedOnRight() || isAtRightEdge());
 	}
-	return false;
-}
+
+	private boolean isBlockedOnRight() {
+		List<Point> activePoints = activePiece.getPiecePosition();
+		for (Point point : activePoints) {
+			if (blocks.get(new Point(point.x + 1, point.y)).isEmpty()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean isAtRightEdge() {
+		List<Point> activePoints = activePiece.getPiecePosition();
+		for (Point point : activePoints) {
+			if (point.x == MAX_X) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
-
